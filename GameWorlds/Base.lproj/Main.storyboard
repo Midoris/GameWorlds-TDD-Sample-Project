@@ -26,7 +26,49 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucx-gl-HrM" id="Q7a-Df-JUB">
                                             <frame key="frameInset" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4L-Eg-IkV">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16.5"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-by-EQX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="Je2-bb-eK5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d2-j5-Hxt">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCe-dN-IIy">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="foX-by-EQX" secondAttribute="trailing" constant="8" id="19X-d1-Suk"/>
+                                                <constraint firstItem="foX-by-EQX" firstAttribute="leading" secondItem="f4L-Eg-IkV" secondAttribute="trailing" constant="28" id="5mh-PE-j2K"/>
+                                                <constraint firstItem="cCe-dN-IIy" firstAttribute="leading" secondItem="Q7a-Df-JUB" secondAttribute="leading" constant="16" id="dbQ-pB-WND"/>
+                                                <constraint firstItem="foX-by-EQX" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="e0D-o9-g5t"/>
+                                                <constraint firstItem="f4L-Eg-IkV" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="eon-5Y-cpX"/>
+                                                <constraint firstAttribute="trailing" secondItem="1d2-j5-Hxt" secondAttribute="trailing" constant="8" id="kBx-JQ-ykV"/>
+                                                <constraint firstItem="f4L-Eg-IkV" firstAttribute="leading" secondItem="Q7a-Df-JUB" secondAttribute="leading" constant="16" id="pOI-25-vTl"/>
+                                                <constraint firstAttribute="bottom" secondItem="1d2-j5-Hxt" secondAttribute="bottom" constant="3.5" id="ttV-k0-vog"/>
+                                                <constraint firstAttribute="bottom" secondItem="cCe-dN-IIy" secondAttribute="bottom" constant="3.5" id="z24-J2-90t"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryLabel" destination="cCe-dN-IIy" id="biC-7N-L8S"/>
+                                            <outlet property="descriptionLabel" destination="foX-by-EQX" id="WbA-nE-qKD"/>
+                                            <outlet property="languageLabel" destination="1d2-j5-Hxt" id="JyJ-e0-hGP"/>
+                                            <outlet property="nameLabel" destination="f4L-Eg-IkV" id="64D-OD-Ril"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

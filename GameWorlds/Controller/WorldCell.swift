@@ -10,6 +10,12 @@ import UIKit
 
 class WorldCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+
+
 
     func configCell(with world: World) {
 
