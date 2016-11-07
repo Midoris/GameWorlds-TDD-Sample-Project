@@ -110,10 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				068D0B291DCF61000093858F /* AppDelegate.swift */,
-				06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */,
-				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
-				06BBA1251DD04251005427B9 /* WorldCell.swift */,
-				06BBA12D1DD05BCC005427B9 /* InputViewController.swift */,
+				069414B81DD0A4160087E263 /* Controller */,
 				06BBA1311DD06272005427B9 /* APIClient.swift */,
 				069414B41DD08D4E0087E263 /* DeviceInfo.swift */,
 				06BBA11B1DD03236005427B9 /* Model */,
@@ -130,14 +127,33 @@
 			children = (
 				06BBA11C1DD0323C005427B9 /* Model */,
 				068D0B401DCF61000093858F /* Info.plist */,
-				06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */,
-				06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */,
-				06BBA1271DD051FE005427B9 /* WorldCellTests.swift */,
-				06BBA12B1DD05ADA005427B9 /* InputViewControllerTests.swift */,
+				069414B91DD0A4200087E263 /* Controller */,
 				06BBA12F1DD06195005427B9 /* APIClientTests.swift */,
 				069414B61DD099380087E263 /* StoryboardTests.swift */,
 			);
 			path = GameWorldsTests;
+			sourceTree = "<group>";
+		};
+		069414B81DD0A4160087E263 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */,
+				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
+				06BBA1251DD04251005427B9 /* WorldCell.swift */,
+				06BBA12D1DD05BCC005427B9 /* InputViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		069414B91DD0A4200087E263 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */,
+				06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */,
+				06BBA1271DD051FE005427B9 /* WorldCellTests.swift */,
+				06BBA12B1DD05ADA005427B9 /* InputViewControllerTests.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		06BBA11B1DD03236005427B9 /* Model */ = {

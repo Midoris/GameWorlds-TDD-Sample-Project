@@ -14,6 +14,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var getWorldsButton: UIButton!
     var worldsManager: WorldsManager?
+    var actInd = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class InputViewController: UIViewController {
             return
         }
         worldsManager?.fetchWorlds(with: login, and: password)
+        startAnimation()
     }
 
     func showWorlds() {
@@ -34,8 +36,30 @@ class InputViewController: UIViewController {
         if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WorldsListViewController") as? WorldsListViewController {
             nextViewController.worldsManager = self.worldsManager
             DispatchQueue.main.async {
+                self.hideAnimation()
                 self.navigationController?.pushViewController(nextViewController, animated: true)
             }
         }
+    }
+
+    private func startAnimation() {
+        self.view.alpha = 0.8
+        self.navigationController?.navigationBar.alpha = 0.2
+        self.actInd.hidesWhenStopped = true
+        let place = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
+        self.actInd.center = place
+        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        self.actInd.color = UIColor.lightGray
+        self.view.addSubview(self.actInd)
+        self.actInd.startAnimating()
+        self.view.isUserInteractionEnabled = false
+
+    }
+
+    private func hideAnimation() {
+        self.actInd.stopAnimating()
+        self.view.alpha = 1
+        self.navigationController?.navigationBar.alpha = 1
+        self.view.isUserInteractionEnabled = true
     }
 }

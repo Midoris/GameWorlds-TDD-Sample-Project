@@ -108,12 +108,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="foX-by-EQX" secondAttribute="trailing" constant="8" id="19X-d1-Suk"/>
                                                 <constraint firstItem="foX-by-EQX" firstAttribute="leading" secondItem="f4L-Eg-IkV" secondAttribute="trailing" constant="10" id="5mh-PE-j2K"/>
                                                 <constraint firstItem="cCe-dN-IIy" firstAttribute="leading" secondItem="Q7a-Df-JUB" secondAttribute="leading" constant="16" id="dbQ-pB-WND"/>
-                                                <constraint firstItem="foX-by-EQX" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="e0D-o9-g5t"/>
-                                                <constraint firstItem="f4L-Eg-IkV" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="eon-5Y-cpX"/>
+                                                <constraint firstItem="foX-by-EQX" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" constant="5" id="e0D-o9-g5t"/>
+                                                <constraint firstItem="f4L-Eg-IkV" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" constant="5" id="eon-5Y-cpX"/>
                                                 <constraint firstAttribute="trailing" secondItem="1d2-j5-Hxt" secondAttribute="trailing" constant="8" id="kBx-JQ-ykV"/>
                                                 <constraint firstItem="f4L-Eg-IkV" firstAttribute="leading" secondItem="Q7a-Df-JUB" secondAttribute="leading" constant="16" id="pOI-25-vTl"/>
                                                 <constraint firstAttribute="bottom" secondItem="1d2-j5-Hxt" secondAttribute="bottom" constant="3.5" id="ttV-k0-vog"/>
-                                                <constraint firstAttribute="bottom" secondItem="cCe-dN-IIy" secondAttribute="bottom" constant="3.5" id="z24-J2-90t"/>
+                                                <constraint firstAttribute="bottom" secondItem="cCe-dN-IIy" secondAttribute="bottom" constant="5" id="z24-J2-90t"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
