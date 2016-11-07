@@ -25,6 +25,8 @@
 		06BBA1281DD051FE005427B9 /* WorldCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1271DD051FE005427B9 /* WorldCellTests.swift */; };
 		06BBA12C1DD05ADA005427B9 /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA12B1DD05ADA005427B9 /* InputViewControllerTests.swift */; };
 		06BBA12E1DD05BCC005427B9 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA12D1DD05BCC005427B9 /* InputViewController.swift */; };
+		06BBA1301DD06195005427B9 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA12F1DD06195005427B9 /* APIClientTests.swift */; };
+		06BBA1321DD06272005427B9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1311DD06272005427B9 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		06BBA1271DD051FE005427B9 /* WorldCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldCellTests.swift; path = Controller/WorldCellTests.swift; sourceTree = "<group>"; };
 		06BBA12B1DD05ADA005427B9 /* InputViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewControllerTests.swift; path = Controller/InputViewControllerTests.swift; sourceTree = "<group>"; };
 		06BBA12D1DD05BCC005427B9 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = Controller/InputViewController.swift; sourceTree = "<group>"; };
+		06BBA12F1DD06195005427B9 /* APIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		06BBA1311DD06272005427B9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
 				06BBA1251DD04251005427B9 /* WorldCell.swift */,
 				06BBA12D1DD05BCC005427B9 /* InputViewController.swift */,
+				06BBA1311DD06272005427B9 /* APIClient.swift */,
 				06BBA11B1DD03236005427B9 /* Model */,
 				068D0B2D1DCF61000093858F /* Main.storyboard */,
 				068D0B301DCF61000093858F /* Assets.xcassets */,
@@ -124,6 +129,7 @@
 				06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */,
 				06BBA1271DD051FE005427B9 /* WorldCellTests.swift */,
 				06BBA12B1DD05ADA005427B9 /* InputViewControllerTests.swift */,
+				06BBA12F1DD06195005427B9 /* APIClientTests.swift */,
 			);
 			path = GameWorldsTests;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				068D0B4C1DCF63410093858F /* World.swift in Sources */,
 				068D0B2A1DCF61000093858F /* AppDelegate.swift in Sources */,
 				06BBA1221DD03738005427B9 /* WorldsListDataProvider.swift in Sources */,
+				06BBA1321DD06272005427B9 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +278,7 @@
 				068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */,
 				06BBA1241DD03A2F005427B9 /* WorldsListDataProviderTests.swift in Sources */,
 				06BBA12C1DD05ADA005427B9 /* InputViewControllerTests.swift in Sources */,
+				06BBA1301DD06195005427B9 /* APIClientTests.swift in Sources */,
 				06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */,
 				068D0B4A1DCF62460093858F /* WorldTests.swift in Sources */,
 				06BBA1281DD051FE005427B9 /* WorldCellTests.swift in Sources */,
