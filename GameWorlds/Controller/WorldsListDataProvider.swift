@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorldsListDataProvider: NSObject, UITableViewDataSource {
+class WorldsListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     var worldsManager: WorldsManager?
 
@@ -17,15 +17,15 @@ class WorldsListDataProvider: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorldCell", for: indexPath) as! WorldCell
-
         guard let worldsManager = worldsManager else { fatalError() }
-
         let world = worldsManager.world(at: indexPath.row)
         cell.configCell(with: world)
-
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
 }

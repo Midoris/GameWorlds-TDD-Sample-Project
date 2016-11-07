@@ -11,12 +11,20 @@ import UIKit
 class WorldsListViewController: UIViewController {
 
     @IBOutlet weak var worldsTableView: UITableView!
-    @IBOutlet var worldsListDataProvider: UITableViewDataSource & UITableViewDelegate!
+    var worldsListDataProvider: WorldsListDataProvider!
+    var worldsManager: WorldsManager?
 
 
     override func viewDidLoad() {
         worldsTableView.dataSource = worldsListDataProvider
         worldsTableView.delegate = worldsListDataProvider
+        worldsListDataProvider.worldsManager = self.worldsManager
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        worldsTableView.reloadData()
+    }
+
 
 }

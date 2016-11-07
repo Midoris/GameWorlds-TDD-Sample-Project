@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1sk-Tl-bdY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gGq-Gg-zWe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -47,6 +47,7 @@
                             <constraint firstItem="Q3h-XV-aoU" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="mt6-DO-ZLH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LtC-bx-GPY"/>
                     <connections>
                         <outlet property="getWorldsButton" destination="JLE-7B-bBp" id="acE-YB-ZtW"/>
                         <outlet property="loginTextField" destination="F3M-GD-PaQ" id="rGN-HP-jfV"/>
@@ -55,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUn-Z5-jZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-566.66666666666674" y="54.619565217391312"/>
+            <point key="canvasLocation" x="372" y="54.422788605697157"/>
         </scene>
         <!--Worlds List View Controller-->
         <scene sceneID="lS5-Up-xjg">
@@ -86,7 +87,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foX-by-EQX">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="Je2-bb-eK5"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Je2-bb-eK5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -105,7 +106,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="foX-by-EQX" secondAttribute="trailing" constant="8" id="19X-d1-Suk"/>
-                                                <constraint firstItem="foX-by-EQX" firstAttribute="leading" secondItem="f4L-Eg-IkV" secondAttribute="trailing" constant="28" id="5mh-PE-j2K"/>
+                                                <constraint firstItem="foX-by-EQX" firstAttribute="leading" secondItem="f4L-Eg-IkV" secondAttribute="trailing" constant="10" id="5mh-PE-j2K"/>
                                                 <constraint firstItem="cCe-dN-IIy" firstAttribute="leading" secondItem="Q7a-Df-JUB" secondAttribute="leading" constant="16" id="dbQ-pB-WND"/>
                                                 <constraint firstItem="foX-by-EQX" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="e0D-o9-g5t"/>
                                                 <constraint firstItem="f4L-Eg-IkV" firstAttribute="top" secondItem="Q7a-Df-JUB" secondAttribute="top" id="eon-5Y-cpX"/>
@@ -141,7 +142,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qu-Qt-cMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="zAa-bR-Fxc" customClass="WorldsListDataProvider" customModule="GameWorlds" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="94.20289855072464" y="57.880434782608702"/>
+            <point key="canvasLocation" x="1108" y="54"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wrt-6z-uKK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gGq-Gg-zWe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sz6-0s-GKe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1sk-Tl-bdY" kind="relationship" relationship="rootViewController" id="2Ie-Ic-hhh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ba-2s-Mpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-567.20000000000005" y="54.422788605697157"/>
         </scene>
     </scenes>
 </document>

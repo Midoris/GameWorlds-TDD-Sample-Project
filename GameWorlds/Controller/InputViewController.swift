@@ -18,6 +18,8 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         worldsManager = WorldsManager()
+        let notificationName = Notification.Name("DidFinishParsing")
+        NotificationCenter.default.addObserver(self, selector: #selector(InputViewController.showWorlds), name: notificationName, object: nil)
     }
 
     @IBAction func fetchGameWorlds() {
@@ -25,5 +27,15 @@ class InputViewController: UIViewController {
             return
         }
         worldsManager?.fetchWorlds(with: login, and: password)
+    }
+
+    func showWorlds() {
+        print("DidFinishParsing resived")
+        if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WorldsListViewController") as? WorldsListViewController {
+            nextViewController.worldsManager = self.worldsManager
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(nextViewController, animated: true)
+            }
+        }
     }
 }

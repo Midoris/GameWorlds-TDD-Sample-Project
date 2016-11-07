@@ -42,7 +42,9 @@ class WorldsManager {
             parsedWorlds.append(world)
         }
         self.worlds = parsedWorlds
-        print("Parsed worlds is: \(self.worlds)")
+        let notificationName = Notification.Name("DidFinishParsing")
+        print("DidFinishParsing Sended")
+        NotificationCenter.default.post(name: notificationName, object: self)
     }
 
 }
