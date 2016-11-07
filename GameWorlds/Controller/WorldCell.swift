@@ -18,6 +18,9 @@ class WorldCell: UITableViewCell {
 
 
     func configCell(with world: World) {
-
+        nameLabel.text = world.name
+        descriptionLabel.text = world.worldStatus?.description
+        languageLabel.text = world.language
+        countryLabel.text = world.country
     }
 }
