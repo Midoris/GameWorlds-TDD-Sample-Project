@@ -33,14 +33,16 @@ class WorldsManager {
 
     func parse(worldsDict: [[String: AnyObject]]?, error: Error?) {
         guard let worldsDict = worldsDict else { return }
+        var parsedWorlds = [World]()
         for world in worldsDict {
             guard let name = world["name"] as? String, let country = world["country"] as? String,  let language = world["language"] as? String else { return }
             guard let worldDescription = world["worldStatus"]?["description"] as? String, let worldId = world["worldStatus"]?["id"] as? String else { return }
             let worldStatus = WorldStatus(description: worldDescription, id: worldId)
             let world = World(name: name, country: country, language: language, worldStatus: worldStatus)
-            worlds.append(world)
+            parsedWorlds.append(world)
         }
+        self.worlds = parsedWorlds
+        print("Parsed worlds is: \(self.worlds)")
     }
-
 
 }
