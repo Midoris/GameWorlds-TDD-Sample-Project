@@ -16,6 +16,8 @@
 		068D0B4C1DCF63410093858F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B4B1DCF63410093858F /* World.swift */; };
 		068D0B4E1DCF6A0A0093858F /* WorldStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B4D1DCF6A0A0093858F /* WorldStatus.swift */; };
 		068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */; };
+		06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */; };
+		06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1191DD02C20005427B9 /* WorldsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		068D0B4B1DCF63410093858F /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = Model/World.swift; sourceTree = "<group>"; };
 		068D0B4D1DCF6A0A0093858F /* WorldStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldStatus.swift; path = Model/WorldStatus.swift; sourceTree = "<group>"; };
 		068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldStatusTests.swift; path = Model/WorldStatusTests.swift; sourceTree = "<group>"; };
+		06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsManagerTests.swift; path = Model/WorldsManagerTests.swift; sourceTree = "<group>"; };
+		06BBA1191DD02C20005427B9 /* WorldsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				068D0B2B1DCF61000093858F /* ViewController.swift */,
 				068D0B4B1DCF63410093858F /* World.swift */,
 				068D0B4D1DCF6A0A0093858F /* WorldStatus.swift */,
+				06BBA1191DD02C20005427B9 /* WorldsManager.swift */,
 				068D0B2D1DCF61000093858F /* Main.storyboard */,
 				068D0B301DCF61000093858F /* Assets.xcassets */,
 				068D0B321DCF61000093858F /* LaunchScreen.storyboard */,
@@ -100,6 +105,7 @@
 			children = (
 				068D0B491DCF62460093858F /* WorldTests.swift */,
 				068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */,
+				06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */,
 				068D0B401DCF61000093858F /* Info.plist */,
 			);
 			path = GameWorldsTests;
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068D0B4E1DCF6A0A0093858F /* WorldStatus.swift in Sources */,
+				06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */,
 				068D0B4C1DCF63410093858F /* World.swift in Sources */,
 				068D0B2C1DCF61000093858F /* ViewController.swift in Sources */,
 				068D0B2A1DCF61000093858F /* AppDelegate.swift in Sources */,
@@ -222,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */,
+				06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */,
 				068D0B4A1DCF62460093858F /* WorldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +434,7 @@
 				068D0B451DCF61000093858F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		068D0B461DCF61000093858F /* Build configuration list for PBXNativeTarget "GameWorldsTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +443,7 @@
 				068D0B481DCF61000093858F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
