@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		068D0B2A1DCF61000093858F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B291DCF61000093858F /* AppDelegate.swift */; };
-		068D0B2C1DCF61000093858F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B2B1DCF61000093858F /* ViewController.swift */; };
 		068D0B2F1DCF61000093858F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068D0B2D1DCF61000093858F /* Main.storyboard */; };
 		068D0B311DCF61000093858F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 068D0B301DCF61000093858F /* Assets.xcassets */; };
 		068D0B341DCF61000093858F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068D0B321DCF61000093858F /* LaunchScreen.storyboard */; };
@@ -18,6 +17,9 @@
 		068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */; };
 		06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */; };
 		06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1191DD02C20005427B9 /* WorldsManager.swift */; };
+		06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */; };
+		06BBA1201DD03339005427B9 /* WorldsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */; };
+		06BBA1221DD03738005427B9 /* WorldsListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,6 @@
 /* Begin PBXFileReference section */
 		068D0B261DCF61000093858F /* GameWorlds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameWorlds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068D0B291DCF61000093858F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		068D0B2B1DCF61000093858F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		068D0B2E1DCF61000093858F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		068D0B301DCF61000093858F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		068D0B331DCF61000093858F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +47,9 @@
 		068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldStatusTests.swift; path = Model/WorldStatusTests.swift; sourceTree = "<group>"; };
 		06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsManagerTests.swift; path = Model/WorldsManagerTests.swift; sourceTree = "<group>"; };
 		06BBA1191DD02C20005427B9 /* WorldsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsManager.swift; sourceTree = "<group>"; };
+		06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListViewControllerTests.swift; path = Controller/WorldsListViewControllerTests.swift; sourceTree = "<group>"; };
+		06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListViewController.swift; path = Controller/WorldsListViewController.swift; sourceTree = "<group>"; };
+		06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListDataProvider.swift; path = Controller/WorldsListDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				068D0B291DCF61000093858F /* AppDelegate.swift */,
-				068D0B2B1DCF61000093858F /* ViewController.swift */,
-				068D0B4B1DCF63410093858F /* World.swift */,
-				068D0B4D1DCF6A0A0093858F /* WorldStatus.swift */,
-				06BBA1191DD02C20005427B9 /* WorldsManager.swift */,
+				06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */,
+				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
+				06BBA11B1DD03236005427B9 /* Model */,
 				068D0B2D1DCF61000093858F /* Main.storyboard */,
 				068D0B301DCF61000093858F /* Assets.xcassets */,
 				068D0B321DCF61000093858F /* LaunchScreen.storyboard */,
@@ -103,12 +106,31 @@
 		068D0B3D1DCF61000093858F /* GameWorldsTests */ = {
 			isa = PBXGroup;
 			children = (
+				06BBA11C1DD0323C005427B9 /* Model */,
+				068D0B401DCF61000093858F /* Info.plist */,
+				06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */,
+			);
+			path = GameWorldsTests;
+			sourceTree = "<group>";
+		};
+		06BBA11B1DD03236005427B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				068D0B4B1DCF63410093858F /* World.swift */,
+				068D0B4D1DCF6A0A0093858F /* WorldStatus.swift */,
+				06BBA1191DD02C20005427B9 /* WorldsManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		06BBA11C1DD0323C005427B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				068D0B491DCF62460093858F /* WorldTests.swift */,
 				068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */,
 				06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */,
-				068D0B401DCF61000093858F /* Info.plist */,
 			);
-			path = GameWorldsTests;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,10 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				068D0B4E1DCF6A0A0093858F /* WorldStatus.swift in Sources */,
+				06BBA1201DD03339005427B9 /* WorldsListViewController.swift in Sources */,
 				06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */,
 				068D0B4C1DCF63410093858F /* World.swift in Sources */,
-				068D0B2C1DCF61000093858F /* ViewController.swift in Sources */,
 				068D0B2A1DCF61000093858F /* AppDelegate.swift in Sources */,
+				06BBA1221DD03738005427B9 /* WorldsListDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +254,7 @@
 				068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */,
 				06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */,
 				068D0B4A1DCF62460093858F /* WorldTests.swift in Sources */,
+				06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
