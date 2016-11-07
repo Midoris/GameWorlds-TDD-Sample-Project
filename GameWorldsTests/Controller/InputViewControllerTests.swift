@@ -33,6 +33,9 @@ class InputViewControllerTests: XCTestCase {
     func test_HasPasswordTextField() {
         XCTAssertNotNil(sut.passwordTextField)
     }
-    
+
+    func test_HasGetWorldsButton() {
+        XCTAssertNotNil(sut.getWorldsButton)
+    }
 
 }
