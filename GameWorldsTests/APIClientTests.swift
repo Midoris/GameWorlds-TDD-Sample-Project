@@ -31,7 +31,7 @@ class APIClientTests: XCTestCase {
         let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in }
         sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
         XCTAssertNotNil(mockURLSession.completionHendler)
-        guard let url = mockURLSession.url else {
+        guard mockURLSession.url != nil else {
             fatalError()
         }
         let allowedCharacters = CharacterSet(charactersIn: "/%=?$#+-~@<>|\\*,.()[]{}^!").inverted

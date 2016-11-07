@@ -25,6 +25,7 @@ class InputViewController: UIViewController {
 
     @IBAction func fetchGameWorlds() {
         guard let login = loginTextField.text, login.characters.count > 0, let password = passwordTextField.text, password.characters.count > 0  else {
+            showAlert(message: "Please, enter login and password", controller: self)
             return
         }
         worldsManager?.fetchWorlds(with: login, and: password)
@@ -32,7 +33,6 @@ class InputViewController: UIViewController {
     }
 
     func showWorlds() {
-        print("DidFinishParsing resived")
         if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WorldsListViewController") as? WorldsListViewController {
             nextViewController.worldsManager = self.worldsManager
             DispatchQueue.main.async {
@@ -42,14 +42,21 @@ class InputViewController: UIViewController {
         }
     }
 
+    private func showAlert(message: String, controller: UIViewController){
+        let alert = UIAlertController(title: "Error", message: message as String, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        controller.present(alert, animated: true, completion: nil)
+    }
+
+
     private func startAnimation() {
         self.view.alpha = 0.8
         self.navigationController?.navigationBar.alpha = 0.2
-        self.actInd.hidesWhenStopped = true
         let place = CGPoint(x: self.view.frame.size.width / 2, y: (self.view.frame.size.height / 2))
         self.actInd.center = place
-        self.actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        self.actInd.color = UIColor.lightGray
+        self.actInd.hidesWhenStopped = true
+        self.actInd.activityIndicatorViewStyle = .whiteLarge
+        self.actInd.color = UIColor.black
         self.view.addSubview(self.actInd)
         self.actInd.startAnimating()
         self.view.isUserInteractionEnabled = false

@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3M-GD-PaQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3M-GD-PaQ">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-XV-aoU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-XV-aoU">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -41,7 +41,7 @@
                             <constraint firstItem="Q3h-XV-aoU" firstAttribute="top" secondItem="F3M-GD-PaQ" secondAttribute="bottom" constant="30" id="Qq9-nB-Jlc"/>
                             <constraint firstItem="JLE-7B-bBp" firstAttribute="top" secondItem="Q3h-XV-aoU" secondAttribute="bottom" constant="30" id="TfX-rO-mdG"/>
                             <constraint firstItem="F3M-GD-PaQ" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="hyG-2q-2ED"/>
-                            <constraint firstItem="F3M-GD-PaQ" firstAttribute="top" secondItem="Fw1-8E-Aqf" secondAttribute="bottom" constant="120" id="iBE-JZ-81a"/>
+                            <constraint firstItem="F3M-GD-PaQ" firstAttribute="top" secondItem="Fw1-8E-Aqf" secondAttribute="bottom" constant="90" id="iBE-JZ-81a"/>
                             <constraint firstItem="Q3h-XV-aoU" firstAttribute="leading" secondItem="XdX-Zk-9d0" secondAttribute="leadingMargin" id="jdq-Uu-mrY"/>
                             <constraint firstItem="F3M-GD-PaQ" firstAttribute="leading" secondItem="XdX-Zk-9d0" secondAttribute="leadingMargin" id="kag-Mb-DIK"/>
                             <constraint firstItem="Q3h-XV-aoU" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="mt6-DO-ZLH"/>

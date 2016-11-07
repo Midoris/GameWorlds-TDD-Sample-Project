@@ -19,6 +19,7 @@ class WorldsListViewController: UIViewController {
         worldsTableView.dataSource = worldsListDataProvider
         worldsTableView.delegate = worldsListDataProvider
         worldsListDataProvider.worldsManager = self.worldsManager
+        self.navigationItem.title = "Game Worlds"
     }
 
     override func viewWillAppear(_ animated: Bool) {
