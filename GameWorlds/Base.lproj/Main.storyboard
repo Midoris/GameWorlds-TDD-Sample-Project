@@ -2,9 +2,52 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Input View Controller-->
+        <scene sceneID="ZRP-cJ-W0O">
+            <objects>
+                <viewController storyboardIdentifier="InputViewController" id="1sk-Tl-bdY" customClass="InputViewController" customModule="GameWorlds" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fw1-8E-Aqf"/>
+                        <viewControllerLayoutGuide type="bottom" id="LlN-0L-CJL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XdX-Zk-9d0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3M-GD-PaQ">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-XV-aoU">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q3h-XV-aoU" firstAttribute="top" secondItem="F3M-GD-PaQ" secondAttribute="bottom" constant="30" id="Qq9-nB-Jlc"/>
+                            <constraint firstItem="F3M-GD-PaQ" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="hyG-2q-2ED"/>
+                            <constraint firstItem="F3M-GD-PaQ" firstAttribute="top" secondItem="Fw1-8E-Aqf" secondAttribute="bottom" constant="120" id="iBE-JZ-81a"/>
+                            <constraint firstItem="Q3h-XV-aoU" firstAttribute="leading" secondItem="XdX-Zk-9d0" secondAttribute="leadingMargin" id="jdq-Uu-mrY"/>
+                            <constraint firstItem="F3M-GD-PaQ" firstAttribute="leading" secondItem="XdX-Zk-9d0" secondAttribute="leadingMargin" id="kag-Mb-DIK"/>
+                            <constraint firstItem="Q3h-XV-aoU" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="mt6-DO-ZLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="F3M-GD-PaQ" id="rGN-HP-jfV"/>
+                        <outlet property="passwordTextField" destination="Q3h-XV-aoU" id="rRc-5G-rNm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUn-Z5-jZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-566.66666666666674" y="54.619565217391312"/>
+        </scene>
         <!--Worlds List View Controller-->
         <scene sceneID="lS5-Up-xjg">
             <objects>

@@ -50,9 +50,6 @@ class WorldCellTests: XCTestCase {
         XCTAssertEqual(cell.descriptionLabel.text, "online")
     }
 
-
-
-
     func dequeuedItemCell(for indexPath: IndexPath) -> WorldCell {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "WorldsListViewController") as! WorldsListViewController
