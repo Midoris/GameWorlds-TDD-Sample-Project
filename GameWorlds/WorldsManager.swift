@@ -24,4 +24,23 @@ class WorldsManager {
     func removeAllWorlds() {
         worlds.removeAll()
     }
+
+    func fetchWorlds(with login: String, and password: String) {
+        let apiClient = APIClient()
+        let (deviceType, deviceId) = DeviceInfo.deviceInfo()
+        apiClient.loginUser(with: login, password: password, deviceType: deviceType, deviceId: deviceId, completion: parse)
+    }
+
+    func parse(worldsDict: [[String: AnyObject]]?, error: Error?) {
+        guard let worldsDict = worldsDict else { return }
+        for world in worldsDict {
+            guard let name = world["name"] as? String, let country = world["country"] as? String,  let language = world["language"] as? String else { return }
+            guard let worldDescription = world["worldStatus"]?["description"] as? String, let worldId = world["worldStatus"]?["id"] as? String else { return }
+            let worldStatus = WorldStatus(description: worldDescription, id: worldId)
+            let world = World(name: name, country: country, language: language, worldStatus: worldStatus)
+            worlds.append(world)
+        }
+    }
+
+
 }

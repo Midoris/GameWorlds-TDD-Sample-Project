@@ -13,8 +13,17 @@ class InputViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var getWorldsButton: UIButton!
+    var worldsManager: WorldsManager?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        worldsManager = WorldsManager()
+    }
 
     @IBAction func fetchGameWorlds() {
-        
+        guard let login = loginTextField.text, login.characters.count > 0, let password = passwordTextField.text, password.characters.count > 0  else {
+            return
+        }
+        worldsManager?.fetchWorlds(with: login, and: password)
     }
 }

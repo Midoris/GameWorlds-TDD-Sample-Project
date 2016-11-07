@@ -38,7 +38,41 @@ class InputViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.getWorldsButton)
     }
 
+    func testWorkldsManager_IsNotNillAfterViewDidLoad() {
+        XCTAssertNotNil(sut.worldsManager)
+    }
 
+    func testFetchGameWorlds_CallingWorldsManagerFetchWorldsMethod() {
+        sut.loginTextField.text = "ios.test@xyrality.com"
+        sut.passwordTextField.text = "password"
+        let mockWorldsManager = MockWorldsManager()
+        sut.worldsManager = mockWorldsManager
+        sut.fetchGameWorlds()
+        XCTAssertEqual(mockWorldsManager.login, "ios.test@xyrality.com")
+        XCTAssertEqual(mockWorldsManager.password, "password")
+    }
+
+    func testFetchGameWorlds_ShouldNotCallWorldsManagerFetchWorldsMethodIfTextFieldsisNil() {
+        let mockWorldsManager = MockWorldsManager()
+        sut.worldsManager = mockWorldsManager
+        sut.fetchGameWorlds()
+        XCTAssertFalse(mockWorldsManager.fetchWorldsGotCalled)
+    }
     
+}
 
+extension InputViewControllerTests {
+
+    class MockWorldsManager: WorldsManager {
+
+        var fetchWorldsGotCalled = false
+        var login: String?
+        var password: String?
+
+        override func fetchWorlds(with login: String, and password: String) {
+            self.login = login
+            self.password = password
+            fetchWorldsGotCalled = true
+        }
+    }
 }

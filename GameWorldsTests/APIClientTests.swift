@@ -26,16 +26,36 @@ class APIClientTests: XCTestCase {
         super.tearDown()
     }
 
+    func testLogin_MakesRequestWithUSerNameAndPassword() {
+        sut.session = mockURLSession
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in }
+        sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
+        XCTAssertNotNil(mockURLSession.completionHendler)
+        guard let url = mockURLSession.url else {
+            fatalError()
+        }
+        let allowedCharacters = CharacterSet(charactersIn: "/%=?$#+-~@<>|\\*,.()[]{}^!").inverted
+        guard let expectedsername = "ios.test@xyrality.com".addingPercentEncoding(withAllowedCharacters: allowedCharacters) else {
+            fatalError()
+        }
+        guard let expectedPassword = "password".addingPercentEncoding(withAllowedCharacters: allowedCharacters) else {
+            fatalError()
+        }
+        let stringFromData = String(data: mockURLSession.requestData!, encoding: .utf8)
+        XCTAssertEqual(stringFromData, "login=\(expectedsername)&password=\(expectedPassword)&deviceType=iPad&deviceId=randomId")
+    }
+
+
     func testLogin_CallsResumeOfDataTask() {
         sut.session = mockURLSession
-        let completion = { (error: Error?) in }
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in }
         sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
         XCTAssertTrue(mockURLSession.dataTask.resumeGotCalled)
     }
 
     func testLogin_ThrowsErrorWhenJSONIsInvalid() {
         var theError: Error?
-        let completion = { (error: Error?) in
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
             theError = error
         }
         sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
@@ -46,7 +66,7 @@ class APIClientTests: XCTestCase {
 
     func  testLogin_ThrowsErrorWhenDataIsNill() {
         var theError: Error?
-        let completion = { (error: Error?) in
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
             theError = error
         }
         sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
@@ -56,7 +76,7 @@ class APIClientTests: XCTestCase {
 
     func testLogin_ThrowsErrorWhenResponseHesError() {
         var theError: Error?
-        let completion = { (error: Error?) in
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
             theError = error
         }
         sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
@@ -86,7 +106,6 @@ extension APIClientTests {
             self.completionHendler = completionHandler
             requestData = request.httpBody
             return dataTask
-
         }
 
     }
