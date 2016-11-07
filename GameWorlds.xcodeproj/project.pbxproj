@@ -20,6 +20,8 @@
 		06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */; };
 		06BBA1201DD03339005427B9 /* WorldsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */; };
 		06BBA1221DD03738005427B9 /* WorldsListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */; };
+		06BBA1241DD03A2F005427B9 /* WorldsListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */; };
+		06BBA1261DD04251005427B9 /* WorldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1251DD04251005427B9 /* WorldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListViewControllerTests.swift; path = Controller/WorldsListViewControllerTests.swift; sourceTree = "<group>"; };
 		06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListViewController.swift; path = Controller/WorldsListViewController.swift; sourceTree = "<group>"; };
 		06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListDataProvider.swift; path = Controller/WorldsListDataProvider.swift; sourceTree = "<group>"; };
+		06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListDataProviderTests.swift; path = Controller/WorldsListDataProviderTests.swift; sourceTree = "<group>"; };
+		06BBA1251DD04251005427B9 /* WorldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldCell.swift; path = Controller/WorldCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				068D0B291DCF61000093858F /* AppDelegate.swift */,
 				06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */,
 				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
+				06BBA1251DD04251005427B9 /* WorldCell.swift */,
 				06BBA11B1DD03236005427B9 /* Model */,
 				068D0B2D1DCF61000093858F /* Main.storyboard */,
 				068D0B301DCF61000093858F /* Assets.xcassets */,
@@ -109,6 +114,7 @@
 				06BBA11C1DD0323C005427B9 /* Model */,
 				068D0B401DCF61000093858F /* Info.plist */,
 				06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */,
+				06BBA1231DD03A2F005427B9 /* WorldsListDataProviderTests.swift */,
 			);
 			path = GameWorldsTests;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			files = (
 				068D0B4E1DCF6A0A0093858F /* WorldStatus.swift in Sources */,
 				06BBA1201DD03339005427B9 /* WorldsListViewController.swift in Sources */,
+				06BBA1261DD04251005427B9 /* WorldCell.swift in Sources */,
 				06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */,
 				068D0B4C1DCF63410093858F /* World.swift in Sources */,
 				068D0B2A1DCF61000093858F /* AppDelegate.swift in Sources */,
@@ -252,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */,
+				06BBA1241DD03A2F005427B9 /* WorldsListDataProviderTests.swift in Sources */,
 				06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */,
 				068D0B4A1DCF62460093858F /* WorldTests.swift in Sources */,
 				06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */,

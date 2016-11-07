@@ -10,12 +10,22 @@ import UIKit
 
 class WorldsListDataProvider: NSObject, UITableViewDataSource {
 
+    var worldsManager: WorldsManager?
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return worldsManager?.worldsCount ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WorldCell", for: indexPath) as! WorldCell
+
+        guard let worldsManager = worldsManager else { fatalError() }
+
+        let world = worldsManager.world(at: indexPath.row)
+        cell.configCell(with: world)
+
+        return cell
     }
 
 }
