@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct World {
+struct World: Equatable {
 
     let name: String
     let country: String?
@@ -29,4 +29,11 @@ struct World {
         self.worldStatus = worldStatus
     }
 
+}
+
+func ==(lhs: World, rhs: World) -> Bool {
+    if lhs.worldStatus?.description != rhs.worldStatus?.description {
+        return false
+    }
+    return true
 }

@@ -8,8 +8,18 @@
 
 import Foundation
 
-struct WorldStatus {
+struct WorldStatus: Equatable {
 
     let description: String
     let id: String
+}
+
+func ==(lhs: WorldStatus, rhs: WorldStatus) -> Bool {
+    if lhs.description != rhs.description {
+        return false
+    }
+    if lhs.id != rhs.id {
+        return false
+    }
+    return true
 }

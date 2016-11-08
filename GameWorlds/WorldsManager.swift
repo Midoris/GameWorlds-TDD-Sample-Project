@@ -41,9 +41,12 @@ class WorldsManager {
             let world = World(name: name, country: country, language: language, worldStatus: worldStatus)
             parsedWorlds.append(world)
         }
-        self.worlds = parsedWorlds
-        postNotification()
+        self.worlds = parsedWorlds.reversed()
+        DispatchQueue.main.async {
+            self.postNotification()
+        }
     }
+
 
     private func postNotification() {
         let notificationName = Notification.Name("DidFinishParsing")

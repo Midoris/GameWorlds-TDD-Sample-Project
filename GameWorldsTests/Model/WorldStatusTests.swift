@@ -27,4 +27,22 @@ class WorldStatusTests: XCTestCase {
         XCTAssertEqual(worldStatus.id, "The id")
     }
 
+    func testEqualWorldStatuses_ShouldBeEqual() {
+        let firstWorldStatus = WorldStatus(description: "The descritpion", id: "1")
+        let secondWorldStatus = WorldStatus(description: "The descritpion", id: "1")
+        XCTAssertEqual(firstWorldStatus, secondWorldStatus)
+    }
+
+    func testWhenDescriptionDeffers_ShouldBeNotEqual() {
+        let firstWorldStatus = WorldStatus(description: "First descritpion", id: "1")
+        let secondWorldStatus = WorldStatus(description: "Second descritpion", id: "1")
+        XCTAssertNotEqual(firstWorldStatus, secondWorldStatus)
+    }
+
+    func testWhenIdDeffers_ShouldBeNotEqual() {
+        let firstWorldStatus = WorldStatus(description: "The descritpion", id: "1")
+        let secondWorldStatus = WorldStatus(description: "The descritpion", id: "2")
+        XCTAssertNotEqual(firstWorldStatus, secondWorldStatus)
+    }
+
 }

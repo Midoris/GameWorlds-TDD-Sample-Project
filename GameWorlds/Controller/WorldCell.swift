@@ -16,6 +16,7 @@ class WorldCell: UITableViewCell {
     @IBOutlet weak var countryLabel: UILabel!
 
     func configCell(with world: World) {
+
         nameLabel.text = world.name
         descriptionLabel.text = world.worldStatus?.description
         languageLabel.text = world.language

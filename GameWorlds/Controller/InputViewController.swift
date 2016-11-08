@@ -33,12 +33,10 @@ class InputViewController: UIViewController {
     }
 
     func showWorlds() {
-        if let nextViewController = storyboard?.instantiateViewController(withIdentifier: "WorldsListViewController") as? WorldsListViewController {
+        if let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "WorldsListViewController") as? WorldsListViewController {
             nextViewController.worldsManager = self.worldsManager
-            DispatchQueue.main.async {
-                self.hideAnimation()
-                self.navigationController?.pushViewController(nextViewController, animated: true)
-            }
+            self.hideAnimation()
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
 
@@ -47,7 +45,6 @@ class InputViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         controller.present(alert, animated: true, completion: nil)
     }
-
 
     private func startAnimation() {
         self.view.alpha = 0.8
@@ -60,7 +57,6 @@ class InputViewController: UIViewController {
         self.view.addSubview(self.actInd)
         self.actInd.startAnimating()
         self.view.isUserInteractionEnabled = false
-
     }
 
     private func hideAnimation() {

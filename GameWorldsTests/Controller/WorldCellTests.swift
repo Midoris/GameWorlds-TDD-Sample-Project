@@ -58,7 +58,6 @@ class WorldCellTests: XCTestCase {
         let dataProvider = FakeDataSource()
         tableView?.dataSource = dataProvider
         let cell = tableView?.dequeueReusableCell(withIdentifier: "WorldCell", for: IndexPath(row: 0, section: 0)) as! WorldCell
-
         return cell
     }
 

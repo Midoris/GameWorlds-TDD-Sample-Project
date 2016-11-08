@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Input View Controller-->
+        <!--Login-->
         <scene sceneID="ZRP-cJ-W0O">
             <objects>
                 <viewController storyboardIdentifier="InputViewController" id="1sk-Tl-bdY" customClass="InputViewController" customModule="GameWorlds" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                             <constraint firstItem="Q3h-XV-aoU" firstAttribute="trailing" secondItem="XdX-Zk-9d0" secondAttribute="trailingMargin" id="mt6-DO-ZLH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LtC-bx-GPY"/>
+                    <navigationItem key="navigationItem" title="Login" id="LtC-bx-GPY"/>
                     <connections>
                         <outlet property="getWorldsButton" destination="JLE-7B-bBp" id="acE-YB-ZtW"/>
                         <outlet property="loginTextField" destination="F3M-GD-PaQ" id="rGN-HP-jfV"/>

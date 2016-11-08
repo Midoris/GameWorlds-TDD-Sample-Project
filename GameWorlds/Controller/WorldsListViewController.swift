@@ -14,7 +14,6 @@ class WorldsListViewController: UIViewController {
     var worldsListDataProvider: WorldsListDataProvider!
     var worldsManager: WorldsManager?
 
-
     override func viewDidLoad() {
         worldsTableView.dataSource = worldsListDataProvider
         worldsTableView.delegate = worldsListDataProvider
