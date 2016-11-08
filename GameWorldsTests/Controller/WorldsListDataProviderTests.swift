@@ -39,6 +39,11 @@ class WorldsListDataProviderTests: XCTestCase {
         XCTAssertEqual(numberOfSections, 1)
     }
 
+    func testNumberOfRows_ShouldBeZeroIfWorldsManagerISNil() {
+        sut.worldsManager = nil
+        XCTAssertEqual(sut.tableView(tableView, numberOfRowsInSection: 0), 0)
+    }
+
     func testNumberOfRowsInSection_IsWorldsCont() {
         sut.worldsManager?.add(world: World(name: "First"))
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
