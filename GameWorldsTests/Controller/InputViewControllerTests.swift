@@ -93,8 +93,7 @@ extension InputViewControllerTests {
         var fetchWorldsGotCalled = false
         var login: String?
         var password: String?
-
-        override func fetchWorlds(with login: String, and password: String) {
+        override func fetchWorlds(with login: String, and password: String, apiClient: APIClient) {
             self.login = login
             self.password = password
             fetchWorldsGotCalled = true

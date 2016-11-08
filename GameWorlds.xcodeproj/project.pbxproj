@@ -17,6 +17,8 @@
 		068D0B501DCF6B180093858F /* WorldStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */; };
 		069414B51DD08D4E0087E263 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069414B41DD08D4E0087E263 /* DeviceInfo.swift */; };
 		069414B71DD099380087E263 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069414B61DD099380087E263 /* StoryboardTests.swift */; };
+		06B0498E1DD192ED00566B86 /* DeviceInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0498D1DD192ED00566B86 /* DeviceInfoTests.swift */; };
+		06BB31ED1DD1A97900DE99C2 /* ExamplesOfWorldsDicts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB31EC1DD1A97900DE99C2 /* ExamplesOfWorldsDicts.swift */; };
 		06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */; };
 		06BBA11A1DD02C20005427B9 /* WorldsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA1191DD02C20005427B9 /* WorldsManager.swift */; };
 		06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */; };
@@ -56,6 +58,8 @@
 		068D0B4F1DCF6B180093858F /* WorldStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldStatusTests.swift; path = Model/WorldStatusTests.swift; sourceTree = "<group>"; };
 		069414B41DD08D4E0087E263 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		069414B61DD099380087E263 /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
+		06B0498D1DD192ED00566B86 /* DeviceInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoTests.swift; sourceTree = "<group>"; };
+		06BB31EC1DD1A97900DE99C2 /* ExamplesOfWorldsDicts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesOfWorldsDicts.swift; sourceTree = "<group>"; };
 		06BBA1171DD02BA1005427B9 /* WorldsManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsManagerTests.swift; path = Model/WorldsManagerTests.swift; sourceTree = "<group>"; };
 		06BBA1191DD02C20005427B9 /* WorldsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldsManager.swift; sourceTree = "<group>"; };
 		06BBA11D1DD0327F005427B9 /* WorldsListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldsListViewControllerTests.swift; path = Controller/WorldsListViewControllerTests.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				069414B91DD0A4200087E263 /* Controller */,
 				06BBA12F1DD06195005427B9 /* APIClientTests.swift */,
 				069414B61DD099380087E263 /* StoryboardTests.swift */,
+				06B0498D1DD192ED00566B86 /* DeviceInfoTests.swift */,
+				06BB31EC1DD1A97900DE99C2 /* ExamplesOfWorldsDicts.swift */,
 			);
 			path = GameWorldsTests;
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 				06BBA1181DD02BA1005427B9 /* WorldsManagerTests.swift in Sources */,
 				068D0B4A1DCF62460093858F /* WorldTests.swift in Sources */,
 				069414B71DD099380087E263 /* StoryboardTests.swift in Sources */,
+				06BB31ED1DD1A97900DE99C2 /* ExamplesOfWorldsDicts.swift in Sources */,
+				06B0498E1DD192ED00566B86 /* DeviceInfoTests.swift in Sources */,
 				06BBA1281DD051FE005427B9 /* WorldCellTests.swift in Sources */,
 				06BBA11E1DD0327F005427B9 /* WorldsListViewControllerTests.swift in Sources */,
 			);

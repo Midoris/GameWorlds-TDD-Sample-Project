@@ -11,7 +11,7 @@ import UIKit
 
 class DeviceInfo {
 
-    class func deviceInfo() -> (deviceType: String, deviceId: String) {
+    class func deviceInfo() -> (String, String) {
         let type = "\(UIDevice.current.model), \(UIDevice.current.systemName), \(UIDevice.current.systemVersion)"
         let id = "\(UUID().uuidString)"
         return (type, id)

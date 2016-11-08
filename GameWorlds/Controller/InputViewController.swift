@@ -23,12 +23,17 @@ class InputViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(InputViewController.showWorlds), name: notificationName, object: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     @IBAction func fetchGameWorlds() {
         guard let login = loginTextField.text, login.characters.count > 0, let password = passwordTextField.text, password.characters.count > 0  else {
             showAlert(message: "Please, enter login and password", controller: self)
             return
         }
-        worldsManager?.fetchWorlds(with: login, and: password)
+        let apiClient = APIClient()
+        worldsManager?.fetchWorlds(with: login, and: password, apiClient: apiClient)
         startAnimation()
     }
 

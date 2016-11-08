@@ -63,6 +63,12 @@ class WorldTests: XCTestCase {
         XCTAssertEqual(firstWorld, secondWorld)
     }
 
+    func testWhenNamesDiffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First")
+        let secondWorld = World(name: "Second")
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
     func testWhenWorldStatusDiffers_ShouldBeNotEqual() {
         let firstWorld = World(name: "First", worldStatus: WorldStatus(description: "First description", id: "1"))
         let secondWorld = World(name: "First", worldStatus: WorldStatus(description: "Second description", id: "1"))

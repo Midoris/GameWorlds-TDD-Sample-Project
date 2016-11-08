@@ -18,7 +18,8 @@ class WorldsListDataProvider: NSObject, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorldCell", for: indexPath) as! WorldCell
-        guard let worldsManager = worldsManager else { fatalError() }
+        guard let worldsManager = worldsManager
+            else { fatalError() }
         let world = worldsManager.world(at: indexPath.row)
         cell.configCell(with: world)
         return cell

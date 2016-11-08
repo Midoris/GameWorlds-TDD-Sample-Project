@@ -25,8 +25,8 @@ class WorldsManager {
         worlds.removeAll()
     }
 
-    func fetchWorlds(with login: String, and password: String) {
-        let apiClient = APIClient()
+    func fetchWorlds(with login: String, and password: String, apiClient: APIClient) {
+        let apiClient = apiClient
         let (deviceType, deviceId) = DeviceInfo.deviceInfo()
         apiClient.loginUser(with: login, password: password, deviceType: deviceType, deviceId: deviceId, completion: parse)
     }

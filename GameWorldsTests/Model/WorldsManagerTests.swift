@@ -48,37 +48,67 @@ class WorldsManagerTests: XCTestCase {
 
     func testPrase_ChangeWorldsCount() {
         XCTAssertEqual(sut.worldsCount, 0)
-        sut.parse(worldsDict: worldsDict as [[String : AnyObject]]?, error: nil)
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDict as [[String : AnyObject]]?, error: nil)
         XCTAssertEqual(sut.worldsCount, 3)
+    }
+
+    func testParse_ShouldReverseParsedWorlds() {
+        var notReversedWorlds = [World]()
+        let firstWorld = World(name: "USA 12 (recommended)", country: "US", language: "en",  worldStatus: WorldStatus(description: "online", id: "3"))
+        notReversedWorlds.append(firstWorld)
+        let secondWorld = World(name: "Battle World 3 (recommended)", country: "XB", language: "xb",  worldStatus: WorldStatus(description: "online", id: "3"))
+        notReversedWorlds.append(secondWorld)
+        let theThirdWorld = World(name: "Europe 1", country: "XB", language: "xb",  worldStatus: WorldStatus(description: "online", id: "3"))
+        notReversedWorlds.append(theThirdWorld)
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDict as [[String : AnyObject]]?, error: nil)
+        XCTAssertEqual(notReversedWorlds[0], sut.world(at: 2))
+
     }
 
     func testParse_ResultsInExpectedWorld() {
         let expectedWorld = World(name: "Europe 1", country: "XB", language: "xb",  worldStatus: WorldStatus(description: "online", id: "3"))
-        sut.parse(worldsDict: worldsDict as [[String : AnyObject]]?, error: nil)
-        XCTAssertEqual(sut.world(at: 0).name, expectedWorld.name)
-        XCTAssertEqual(sut.world(at: 0).country, expectedWorld.country)
-        XCTAssertEqual(sut.world(at: 0).language, expectedWorld.language)
-        XCTAssertEqual(sut.world(at: 0).worldStatus?.description, expectedWorld.worldStatus?.description)
-        XCTAssertEqual(sut.world(at: 0).worldStatus?.id, expectedWorld.worldStatus?.id)
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDict as [[String : AnyObject]]?, error: nil)
+        XCTAssertEqual(sut.world(at: 0), expectedWorld)
     }
 
     func testParse_SendsNotification() {
         expectation(forNotification: "DidFinishParsing", object: nil, handler: nil)
-        sut.parse(worldsDict: worldsDict as [[String : AnyObject]]?, error: nil)
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDict as [[String : AnyObject]]?, error: nil)
         waitForExpectations(timeout: 3, handler: nil)
     }
 
+    func testFetchWorlds_CallsLoginUser() {
+        let mockAPIClient = MockAPIClient()
+        sut.fetchWorlds(with: "ios.test@xyrality.com", and: "password", apiClient: mockAPIClient)
+        XCTAssertTrue(mockAPIClient.loginUserGotCalled)
+    }
 
-    let worldsDict = [["name": "USA 12 (recommended)",
-                       "worldStatus": ["description": "online", "id": "3",],
-                       "id": "168", "mapURL": "https://maps3.lordsandknights.com/LKWorldServer-US-12", "language": "en", "url": "https://backend3.lordsandknights.com/XYRALITY/WebObjects/LKWorldServer-US-12.woa", "country": "US"],
-                      ["name": "Battle World 3 (recommended)",
-                       "worldStatus": ["description": "online", "id": "3",],
-                       "id": "145", "mapURL": "https://maps1.lordsandknights.com/LKWorldServer-BattleWorld-World-3", "language": "xb", "url": "https://backend1.lordsandknights.com/XYRALITY/WebObjects/LKWorldServer-BattleWorld-World-3.woa", "country": "XB"],
-                      ["name": "Europe 1",
-                       "worldStatus": ["description": "online", "id": "3",],
-                       "id": "128", "mapURL": "https://maps2.lordsandknights.com/LKWorldServer-Europe-1", "language": "xb", "url": "https://backend2.lordsandknights.com/XYRALITY/WebObjects/LKWorldServer-Europe-1.woa", "country": "XB"]
-                      ]
+    func testParseWorldsDictWithWrongLanguage_ResultsInWorldsCountZero() {
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDictWithWrongLanguage as [[String : AnyObject]]?, error: nil)
+        XCTAssertEqual(sut.worldsCount, 0)
+    }
 
+    func testParseWorldsDictWithWrongWorldStatusiD_ResultsInWorldsCountZero() {
+        sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDictWithWrongWorldStatusId as [[String : AnyObject]]?, error: nil)
+        XCTAssertEqual(sut.worldsCount, 0)
+    }
+
+    func testCallParseWithNil__ResultsInWorldsCountZero() {
+        sut.parse(worldsDict: nil, error: nil)
+        XCTAssertEqual(sut.worldsCount, 0)
+
+    }
+
+}
+
+extension WorldsManagerTests {
+
+    class MockAPIClient: APIClient {
+        var loginUserGotCalled = false
+
+        override func loginUser(with username: String, password: String, deviceType: String, deviceId: String, completion: @escaping ([[String : AnyObject]]?, Error?) -> Void) {
+            loginUserGotCalled = true
+        }
+    }
 }
 

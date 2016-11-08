@@ -32,6 +32,9 @@ struct World: Equatable {
 }
 
 func ==(lhs: World, rhs: World) -> Bool {
+    if lhs.name != rhs.name {
+        return false
+    }
     if lhs.worldStatus != rhs.worldStatus {
         return false
     }

@@ -53,7 +53,7 @@ class APIClientTests: XCTestCase {
         XCTAssertTrue(mockURLSession.dataTask.resumeGotCalled)
     }
 
-    func testLogin_ThrowsErrorWhenJSONIsInvalid() {
+    func testLogin_ThrowsErrorWhenDataIsInvalid() {
         var theError: Error?
         let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
             theError = error
@@ -63,6 +63,7 @@ class APIClientTests: XCTestCase {
         mockURLSession.completionHendler?(responseData, nil, nil)
         XCTAssertNotNil(theError)
     }
+
 
     func  testLogin_ThrowsErrorWhenDataIsNill() {
         var theError: Error?
@@ -85,6 +86,26 @@ class APIClientTests: XCTestCase {
         let errorr = NSError(domain: "Some", code: 1234, userInfo: nil)
         mockURLSession.completionHendler?(responseData, nil, errorr)
         XCTAssertNotNil(theError)
+    }
+
+    func testLogin_ThrowsErrorWhenURLIsInvalid() {
+        var theError: Error?
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
+            theError = error
+        }
+        sut.serverURL = ""
+        sut.loginUser(with: "ios.test@xyrality.com", password: "password", deviceType: "iPad", deviceId: "randomId", completion: completion)
+        XCTAssertNotNil(theError)
+    }
+
+
+    func testWorkWithPlist_CallsCompletion() {
+        var resultedWorlds: [[String: AnyObject]]?
+        let completion = { (worlds: [[String: AnyObject]]?, error: Error?) in
+            resultedWorlds = worlds
+        }
+        sut.work(with: ExamplesOfWorldsDicts.AllAvailableWorldsDict, completion: completion)
+        XCTAssertNotNil(resultedWorlds)
     }
 
 }

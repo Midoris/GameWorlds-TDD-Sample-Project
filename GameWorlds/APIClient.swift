@@ -11,17 +11,17 @@ import Foundation
 class APIClient {
 
     lazy var session: GameWorldURLSession = URLSession.shared
+    var serverURL = "https://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds"
 
     func loginUser(with username: String, password: String, deviceType: String, deviceId: String, completion: @escaping ([[String: AnyObject]]?, Error?) -> Void) {
         let allowedCharacters = CharacterSet(charactersIn: "/%=?$#+-~@<>|\\*,.()[]{}^!").inverted
-        guard let encodedUsername = username.addingPercentEncoding(withAllowedCharacters: allowedCharacters) else {
-            fatalError()
-        }
-        guard let encodedPassword = password.addingPercentEncoding(withAllowedCharacters: allowedCharacters) else {
-            fatalError()
-        }
-        guard let url = URL(string: "https://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds") else {
-            fatalError()
+        guard let encodedUsername = username.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
+            else { fatalError() }
+        guard let encodedPassword = password.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
+            else { fatalError() }
+        guard let url = URL(string: serverURL) else {
+            completion(nil, WebServiceError.invalidURL)
+            return
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -35,11 +35,7 @@ class APIClient {
             if let theData = data {
                 do {
                     let plistObject = try PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.ReadOptions(rawValue: UInt(0)),format: nil)
-                    if let responseDict = plistObject as? [String: AnyObject] {
-                        if let worldsDict = responseDict["allAvailableWorlds"] as? [[String: AnyObject]] {
-                            completion(worldsDict, error)
-                        }
-                    }
+                    self.work(with: plistObject, completion: completion)
                 } catch {
                     completion(nil, error)
                 }
@@ -50,11 +46,20 @@ class APIClient {
         task.resume()
     }
 
+    func work(with plistObject: Any, completion: @escaping ([[String: AnyObject]]?, Error?) -> Void) {
+        if let responseDict = plistObject as? [String: AnyObject] {
+            if let worldsDict = responseDict["allAvailableWorlds"] as? [[String: AnyObject]] {
+                completion(worldsDict, nil)
+            }
+        }
+    }
+
 }
 
 enum WebServiceError: Error {
     case dataEmptyError
     case responseError
+    case invalidURL
 }
 
 protocol GameWorldURLSession {
