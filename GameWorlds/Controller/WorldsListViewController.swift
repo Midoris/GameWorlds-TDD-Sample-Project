@@ -26,5 +26,4 @@ class WorldsListViewController: UIViewController {
         worldsTableView.reloadData()
     }
 
-
 }

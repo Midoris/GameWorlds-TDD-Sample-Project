@@ -62,7 +62,6 @@ class WorldsManagerTests: XCTestCase {
         notReversedWorlds.append(theThirdWorld)
         sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDict as [[String : AnyObject]]?, error: nil)
         XCTAssertEqual(notReversedWorlds[0], sut.world(at: 2))
-
     }
 
     func testParse_ResultsInExpectedWorld() {
@@ -83,20 +82,19 @@ class WorldsManagerTests: XCTestCase {
         XCTAssertTrue(mockAPIClient.loginUserGotCalled)
     }
 
-    func testParseWorldsDictWithWrongLanguage_ResultsInWorldsCountZero() {
+    func testParseWorldsDictWithWrongLanguageKey_DoesntChangeWorldsCount() {
         sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDictWithWrongLanguage as [[String : AnyObject]]?, error: nil)
         XCTAssertEqual(sut.worldsCount, 0)
     }
 
-    func testParseWorldsDictWithWrongWorldStatusiD_ResultsInWorldsCountZero() {
+    func testParseWorldsDictWithWrongWorldStatusiDKey_DoesntChangeWorldsCount() {
         sut.parse(worldsDict: ExamplesOfWorldsDicts.WorldsDictWithWrongWorldStatusId as [[String : AnyObject]]?, error: nil)
         XCTAssertEqual(sut.worldsCount, 0)
     }
 
-    func testCallParseWithNil__ResultsInWorldsCountZero() {
+    func testCallParseWithNil_DoesntChangeWorldsCount() {
         sut.parse(worldsDict: nil, error: nil)
         XCTAssertEqual(sut.worldsCount, 0)
-
     }
 
 }

@@ -82,7 +82,6 @@ class InputViewControllerTests: XCTestCase {
         }
         XCTAssertTrue(worldsListWorldsManager === sut.worldsManager)
     }
-
     
 }
 

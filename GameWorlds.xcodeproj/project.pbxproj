@@ -144,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				06BBA11F1DD03339005427B9 /* WorldsListViewController.swift */,
+				06BBA12D1DD05BCC005427B9 /* InputViewController.swift */,
 				06BBA1211DD03738005427B9 /* WorldsListDataProvider.swift */,
 				06BBA1251DD04251005427B9 /* WorldCell.swift */,
-				06BBA12D1DD05BCC005427B9 /* InputViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

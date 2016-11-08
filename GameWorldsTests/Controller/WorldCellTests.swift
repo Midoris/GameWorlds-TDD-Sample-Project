@@ -43,7 +43,8 @@ class WorldCellTests: XCTestCase {
 
     func testConfigWithWorld_SetsLabelTexts() {
         let cell = dequeuedItemCell(for: IndexPath(row: 0, section: 0))
-        cell.configCell(with: World(name: "First", country: "RU", language: "ru", mapURL: nil, url: nil, id: nil, worldStatus: WorldStatus(description: "online", id: "3")))
+        let world = World(name: "First", country: "RU", language: "ru", mapURL: nil, url: nil, id: nil, worldStatus: WorldStatus(description: "online", id: "3"))
+        cell.configCell(with: world)
         XCTAssertEqual(cell.nameLabel.text, "First")
         XCTAssertEqual(cell.countryLabel.text, "RU")
         XCTAssertEqual(cell.languageLabel.text, "ru")

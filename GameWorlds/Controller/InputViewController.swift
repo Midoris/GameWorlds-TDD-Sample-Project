@@ -19,6 +19,7 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         worldsManager = WorldsManager()
+        self.view.addSubview(self.actInd)
         let notificationName = Notification.Name("DidFinishParsing")
         NotificationCenter.default.addObserver(self, selector: #selector(InputViewController.showWorlds), name: notificationName, object: nil)
     }
@@ -59,9 +60,9 @@ class InputViewController: UIViewController {
         self.actInd.hidesWhenStopped = true
         self.actInd.activityIndicatorViewStyle = .whiteLarge
         self.actInd.color = UIColor.black
-        self.view.addSubview(self.actInd)
         self.actInd.startAnimating()
         self.view.isUserInteractionEnabled = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
 
     private func hideAnimation() {
@@ -69,5 +70,6 @@ class InputViewController: UIViewController {
         self.view.alpha = 1
         self.navigationController?.navigationBar.alpha = 1
         self.view.isUserInteractionEnabled = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }

@@ -15,7 +15,6 @@ class WorldsListDataProviderTests: XCTestCase {
     var tableView: UITableView!
     var controller: WorldsListViewController!
 
-    
     override func setUp() {
         super.setUp()
         sut = WorldsListDataProvider()
@@ -27,7 +26,6 @@ class WorldsListDataProviderTests: XCTestCase {
 
         tableView = controller.worldsTableView
         tableView.dataSource = sut
-
     }
     
     override func tearDown() {
@@ -69,13 +67,13 @@ class WorldsListDataProviderTests: XCTestCase {
 
     func testConfigCell_GetsCalledInCellForRow() {
         let mockTableView = MockTableView.mockTableView(with: sut)
-
         let world = World(name: "First")
         sut.worldsManager?.add(world: world)
         mockTableView.reloadData()
         let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockWorldCell
         XCTAssertEqual(cell.world?.name, world.name)
     }
+
 }
 
 extension WorldsListDataProviderTests {
