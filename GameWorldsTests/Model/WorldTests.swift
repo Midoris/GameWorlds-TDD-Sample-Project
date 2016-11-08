@@ -67,7 +67,42 @@ class WorldTests: XCTestCase {
         let firstWorld = World(name: "First", worldStatus: WorldStatus(description: "First description", id: "1"))
         let secondWorld = World(name: "First", worldStatus: WorldStatus(description: "Second description", id: "1"))
         XCTAssertNotEqual(firstWorld, secondWorld)
+    }
 
+    func testWhenOneWorldStatusIsNilAndOtherIsnt_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", worldStatus: nil)
+        let secondWorld = World(name: "First", worldStatus: WorldStatus(description: "Second description", id: "1"))
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
+    func testIfCountryDeffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", country: "RU", worldStatus: WorldStatus(description: "First description", id: "1"))
+        let secondWorld = World(name: "First", country: "UA", worldStatus: WorldStatus(description: "First description", id: "1"))
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
+    func testIfLanguageDeffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", language: "A")
+        let secondWorld = World(name: "First", language: "B")
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
+    func testIfMapURLDeffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", mapURL: "X")
+        let secondWorld = World(name: "First", mapURL: "Y")
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
+    func testIfUrlDeffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", url: "X")
+        let secondWorld = World(name: "First", url: "Y")
+        XCTAssertNotEqual(firstWorld, secondWorld)
+    }
+
+    func testIfDdDeffers_ShouldNotBeEqual() {
+        let firstWorld = World(name: "First", id: "1")
+        let secondWorld = World(name: "First", id: "2")
+        XCTAssertNotEqual(firstWorld, secondWorld)
     }
 
 }
